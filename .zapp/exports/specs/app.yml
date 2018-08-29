@@ -1,0 +1,20 @@
+info:
+  CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+  CFBundleExecutable: $(EXECUTABLE_NAME)
+  CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+  CFBundleInfoDictionaryVersion: '6.0'
+  CFBundlePackageType: APPL
+  CFBundleShortVersionString: '1.0'
+  CFBundleVersion: '1'
+  LSRequiresIPhoneOS: true
+  UILaunchStoryboardName: LaunchScreen
+  UIRequiredDeviceCapabilities:
+    - armv7
+  UISupportedInterfaceOrientations:
+    - UIInterfaceOrientationPortrait
+  UISupportedInterfaceOrientations~ipad:
+    - UIInterfaceOrientationPortrait
+  UIViewControllerBasedStatusBarAppearance: false
+assetInfo:
+  version: 1
+  author: xcode

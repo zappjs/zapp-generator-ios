@@ -1,0 +1,10 @@
+engine: handlebars
+mapping: /app/info
+template: contents
+filename:
+  engine: handlebars
+  template: >-
+    {{{case name
+    'pascal'}}}.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+  mapping:
+    name: /app/name

@@ -1,0 +1,84 @@
+type: object
+properties:
+  delegate:
+    type: object
+    properties:
+      window:
+        type: object
+        properties:
+          rootViewController:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+  info:
+    type: object
+    properties:
+      CFBundleDevelopmentRegion:
+        type: string
+      CFBundleExecutable:
+        type: string
+      CFBundleIdentifier:
+        type: string
+      CFBundleInfoDictionaryVersion:
+        type: string
+      CFBundleName:
+        type: string
+      CFBundlePackageType:
+        type: string
+      CFBundleShortVersionString:
+        type: string
+      CFBundleVersion:
+        type: string
+      LSRequiresIPhoneOS:
+        type: boolean
+      UILaunchStoryboardName:
+        type: string
+      UIRequiredDeviceCapabilities:
+        type: array
+        items:
+          type: string
+      UIStatusBarTintParameters:
+        type: object
+        properties:
+          UINavigationBar:
+            type: object
+            properties:
+              Style:
+                type: string
+              Translucent:
+                type: boolean
+      UISupportedInterfaceOrientations:
+        type: array
+        items:
+          type: string
+      UISupportedInterfaceOrientations~ipad:
+        type: array
+        items:
+          type: string
+      UIViewControllerBasedStatusBarAppearance:
+        type: boolean
+  shared:
+    type: object
+    properties:
+      statusBarStyle:
+        type: string
+        enum:
+          - lightContent
+  appearance:
+    type: object
+    properties:
+      navigationBar:
+        type: object
+        properties:
+          barTintColor:
+            type: string
+          tintColor:
+            type: string
+          titleTextAttributes:
+            type: object
+            properties:
+              foregroundColor:
+                type: string

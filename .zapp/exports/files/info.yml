@@ -1,0 +1,7 @@
+engine: plist
+mapping: /app/info
+filename:
+  engine: handlebars
+  template: '{{{case name ''pascal''}}}/Info.plist'
+  mapping:
+    name: /app/name

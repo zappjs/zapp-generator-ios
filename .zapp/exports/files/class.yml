@@ -1,0 +1,11 @@
+engine: handlebars
+template: class
+iterator: classes
+filename:
+  engine: handlebars
+  template: '{{{case appName ''pascal''}}}/Classes/{{{case name ''pascal''}}}.swift'
+  mapping:
+    appName: /app/name
+    name: '@key'
+mapping:
+  code: '@value'

@@ -1,0 +1,14 @@
+engine: handlebars
+template: model
+filename:
+  engine: handlebars
+  mapping:
+    name: '@key'
+    appName: /app/name
+  template: '{{{case appName ''pascal''}}}/Models/{{{case name ''pascal''}}}Model.swift'
+iterator: models
+mapping:
+  attributes: ./attributes
+  name: '@key'
+  appName: /app/name
+  imports: ./imports

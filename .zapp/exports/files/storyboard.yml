@@ -1,0 +1,18 @@
+engine: handlebars
+filename:
+  engine: handlebars
+  template: >-
+    {{{case appName 'pascal'}}}/Base.lproj/{{{case name
+    'pascal'}}}.storyboard
+  mapping:
+    name: '@key'
+    appName: /app/name
+template: storyboard
+iterator: storyboards
+mapping:
+  scenes: ./scenes
+  name: '@key'
+  resources: ./resources
+  initialViewController: ./initialViewController
+  launchScreen: ./launchScreen
+  useTraitCollections: ./useTraitCollections

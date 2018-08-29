@@ -1,0 +1,509 @@
+type: object
+properties:
+  navigation:
+    additionalProperties: /controllers/properties/view/additionalProperties
+    type: object
+  view:
+    additionalProperties:
+      type: object
+      properties:
+        accessoryType:
+          type: string
+          enum:
+            - checkmark
+            - detailButton
+            - detailDisclosureButton
+            - disclosureIndicator
+            - none
+        actions:
+          type: object
+          additionalProperties:
+            type: code
+            mode: swift
+        childViewControllers:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              type:
+                type: string
+                enum:
+                  - view
+                  - pageView
+        dataSources:
+          type: object
+          properties:
+            tableView:
+              type: object
+              properties:
+                events:
+                  type: object
+                  properties:
+                    cell:
+                      type: code
+                    numberOfRows:
+                      type: code
+                    numberOfSections:
+                      type: code
+                    sectionIndexTitles:
+                      type: code
+                    titleForHeader:
+                      type: code
+                    heightForHeader:
+                      type: code
+                objects:
+                  type: array
+                  items:
+                    type: string
+        delegates:
+          type: object
+          properties:
+            tableView:
+              type: object
+              properties:
+                events:
+                  type: object
+                  properties:
+                    didSelectRow:
+                      type: code
+                objects: >-
+                  /controllers/properties/view/additionalProperties/properties/dataSources/properties/tableView/properties/objects
+            searchBar:
+              type: object
+              properties:
+                events:
+                  type: object
+                  properties:
+                    searchButtonClicked:
+                      type: code
+                    cancelButtonClicked:
+                      type: code
+                    textDidBeginEditing:
+                      type: code
+                    textDidEndEditing:
+                      type: code
+                objects: >-
+                  /controllers/properties/view/additionalProperties/properties/dataSources/properties/tableView/properties/objects
+        events:
+          type: object
+          properties:
+            didLoad:
+              type: code
+            willAppear:
+              type: code
+            willDisappear:
+              type: code
+        gestureRecognizers:
+          type: object
+          additionalProperties:
+            properties:
+              action:
+                type: string
+              type:
+                type: string
+            type: object
+        imports:
+          type: array
+          items:
+            type: string
+        navigationBar:
+          type: object
+          properties:
+            backgroundImage:
+              properties:
+                image:
+                  type: string
+                for:
+                  type: string
+                  enum:
+                    - compact
+                    - compactPrompt
+                    - default
+                    - defaultPrompt
+              type: object
+            shadowImage:
+              properties:
+                image:
+                  type: string
+              type: object
+            isTranslucent:
+              type: boolean
+            prefersLargeTitles:
+              type: boolean
+            isHidden:
+              type: boolean
+        navigationItem:
+          type: object
+          properties:
+            leftBarButtonItems:
+              type: object
+              additionalProperties:
+                type: object
+                properties:
+                  systemIcon:
+                    type: string
+                    enum:
+                      - action
+                      - add
+                      - bookmarks
+                      - camera
+                      - cancel
+                      - compose
+                      - done
+                      - edit
+                      - fastForward
+                      - fixedSpace
+                      - flexibleSpace
+                      - organize
+                      - pause
+                      - play
+                      - redo
+                      - refresh
+                      - reply
+                      - rewind
+                      - save
+                      - search
+                      - stop
+                      - trash
+                      - undo
+                  target:
+                    type: string
+                  action:
+                    type: string
+                  title:
+                    type: string
+                  style:
+                    type: object
+                    enum:
+                      - done
+                      - plain
+                  tintColor:
+                    type: string
+                  image:
+                    type: string
+                  isEnabled:
+                    type: boolean
+            rightBarButtonItems:
+              type: object
+              additionalProperties: >-
+                /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties
+            titleView:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - searchBar
+                searchBarStyle:
+                  type: string
+                  enum:
+                    - prominent
+                placeholder:
+                  type: string
+                sizeToFit:
+                  type: boolean
+                isTranslucent:
+                  type: boolean
+                enablesReturnKeyAutomatically:
+                  type: boolean
+            largeTitleDisplayMode:
+              type: string
+              enum:
+                - always
+                - automatic
+                - never
+            prompt:
+              type: string
+        subviews:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              action:
+                type: string
+              allowsSelection:
+                type: boolean
+              alpha:
+                type: number
+              autocapitalizationType:
+                type: string
+                enum:
+                  - allCharacters
+                  - none
+                  - sentences
+                  - words
+              backgroundColor:
+                enum:
+                  - black
+                  - blue
+                  - brown
+                  - clear
+                  - cyan
+                  - darkGray
+                  - darkText
+                  - gray
+                  - green
+                  - lightGray
+                  - lightText
+                  - magenta
+                  - orange
+                  - purple
+                  - red
+                  - white
+                  - yellow
+                type: string
+              borderStyle:
+                type: string
+                enum:
+                  - bezel
+                  - line
+                  - none
+                  - roundedRect
+              cellsPerRow:
+                type: number
+              constraints:
+                type: object
+                properties:
+                  bottom:
+                    type: object
+                    properties:
+                      operator:
+                        type: string
+                      view:
+                        type: string
+                      multiplier:
+                        type: number
+                      constant:
+                        type: number
+                      anchor:
+                        type: string
+                        enum:
+                          - bottom
+                          - top
+                          - left
+                          - right
+                          - trailing
+                          - leading
+                          - centerX
+                          - centerY
+                  centerX: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  centerY: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  height:
+                    type: object
+                    properties:
+                      operator:
+                        type: string
+                      constant:
+                        type: number
+                  leading: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  left: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  right: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  top: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  trailing: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+                  width: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints/properties/bottom
+              contentMode:
+                type: string
+                enum:
+                  - bottom
+                  - bottomLeft
+                  - bottomRight
+                  - center
+                  - left
+                  - redraw
+                  - right
+                  - scaleAspectFill
+                  - scaleAspectFit
+                  - scaleToFill
+                  - top
+                  - topLeft
+                  - topRight
+              currentPageIndicatorTintColor: >-
+                /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+              font:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - boldSystem
+                      - system
+                  pointSize:
+                    type: number
+              frame:
+                type: object
+                properties:
+                  x:
+                    type: number
+                  'y':
+                    type: number
+                  width:
+                    type: number
+                  height:
+                    type: number
+              image:
+                type: string
+              isHidden:
+                type: boolean
+              isSecureTextEntry:
+                type: boolean
+              layer:
+                type: object
+                properties:
+                  borderColor: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+                  borderWidth:
+                    type: number
+                  cornerRadius:
+                    type: number
+                  masksToBounds:
+                    type: boolean
+              lineBreakMode:
+                type: string
+                enum:
+                  - byCharWrapping
+                  - byClipping
+                  - byTruncatingHead
+                  - byTruncatingMiddle
+                  - byTruncatingTail
+                  - byWordWrapping
+              numberOfLines:
+                type: number
+              numberOfPages:
+                type: number
+              pageIndicatorTintColor: >-
+                /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+              placeholder:
+                type: string
+              refreshControl:
+                type: object
+                properties:
+                  target:
+                    type: string
+                  action:
+                    type: string
+                  for:
+                    type: string
+              registeredClasses:
+                type: object
+                additionalProperties:
+                  type: string
+              startAnimating:
+                type: boolean
+              subviews:
+                type: object
+                additionalProperties: >-
+                  /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties
+              tableView:
+                type: object
+                properties:
+                  style:
+                    type: string
+                    enum:
+                      - grouped
+                      - plain
+                  sectionIndexColor: >-
+                    /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+              text:
+                type: string
+              textAlignment:
+                type: string
+              textColor: >-
+                /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+              title:
+                type: string
+              titleColor: >-
+                /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+              type:
+                type: string
+                enum:
+                  - label
+                  - button
+                  - segmentedControl
+                  - textField
+                  - slider
+                  - switch
+                  - activityIndicatorView
+                  - progressView
+                  - pageControl
+                  - stepper
+                  - stackView
+                  - tableView
+                  - tableViewCell
+                  - imageView
+                  - collectionView
+                  - textView
+                  - scrollView
+                  - datePicker
+                  - pickerView
+                  - visualEffectView
+                  - mapView
+                  - mtkView
+                  - glkView
+                  - sceneKitView
+                  - skView
+                  - arscnView
+                  - arskView
+                  - webView
+                  - wkWebView
+                  - view
+                  - containerView
+                  - navigationBar
+                  - toolbar
+                  - tabBar
+                  - searchBar
+        tabBar:
+          type: object
+          properties:
+            tintColor: >-
+              /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+            barTintColor: >-
+              /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/backgroundColor
+        title:
+          type: string
+        type:
+          type: string
+        view:
+          type: object
+          properties:
+            backgroundColor:
+              type: string
+        viewControllers:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              name:
+                type: string
+              tabBarItem:
+                type: object
+                properties:
+                  systemItem:
+                    type: string
+                  tag:
+                    type: number
+                  image:
+                    type: string
+                  title:
+                    type: string
+                  badgeValue:
+                    type: string
+              type:
+                type: string
+                enum:
+                  - navigation
+                  - tabBar
+                  - view
+    type: object
+  tabBar:
+    additionalProperties: /controllers/properties/view/additionalProperties
+    type: object

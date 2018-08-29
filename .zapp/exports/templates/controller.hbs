@@ -1,0 +1,406 @@
+//
+//  {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller.swift
+//  {{{case appName 'pascal'}}}
+//
+{{#if author}}
+//  Created by {{{author.name}}}.
+{{/if}}
+{{#if copyright}}
+//  {{{copyright}}}
+//
+{{/if}}
+
+{{#each imports}}
+import {{{this}}}
+{{/each}}
+import UIKit
+
+class {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller: UI{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller{{#each dataSources}}, UI{{{case @key 'pascal'}}}DataSource{{/each}}{{#each delegates}}, UI{{{case @key 'pascal'}}}Delegate{{/each}} {
+    {{#eq navigationItem.titleView.type 'searchBar'}}
+
+    lazy var searchBar:UISearchBar = UISearchBar()
+    {{/eq}}
+    {{#if viewControllers}}
+
+    {{#each viewControllers}}
+    let {{#if name}}{{{case name 'camel'}}}{{else}}{{{case @key 'camel'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller = {{#if name}}{{{case name 'pascal'}}}{{else}}{{{case @key 'pascal'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller()
+    {{/each}}
+    {{/if}}
+    {{#if props}}
+
+    {{#each props}}
+    var {{{@key}}}{{#if type}}: {{{json type 0}}}{{/if}}{{#if value}} = {{{json value 0}}}{{/if}}
+    {{/each}}
+    {{/if}}
+    {{#if subviews}}
+
+    {{#each subviews}}
+    {{#eq type 'pageView'}}
+    {{{indent (swiftProperties @key this type (case type 'pascal') true) 1 '    '}}}
+    {{else}}
+    {{{indent (swiftProperties @key this type (case type 'pascal')) 1 '    '}}}
+    {{/eq}}
+    {{/each}}
+    {{/if}}
+    {{#if events.willAppear}}
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        {{{indent (code events.willAppear) 2 '    '}}}
+    }
+    {{/if}}
+    {{#if events.willDisappear}}
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        {{{indent (code events.willDisappear) 2 '    '}}}
+    }
+    {{/if}}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        {{#each gestureRecognizers}}
+
+        self.view.addGestureRecognizer(
+            UI{{{case type 'pascal'}}}GestureRecognizer(
+                target: {{#if target}}{{{target}}}{{else}}self{{/if}},
+                action: #selector({{{action}}})
+            )
+        )
+        {{/each}}
+        {{#if title}}
+
+        self.title = "{{{title}}}"
+        {{/if}}
+        {{#if navigationItem.largeTitleDisplayMode}}
+
+        self.navigationItem.largeTitleDisplayMode = .{{{navigationItem.largeTitleDisplayMode}}}
+        {{/if}}
+        {{#if navigationItem.prompt}}
+
+        self.navigationItem.prompt = "{{{navigationItem.prompt}}}"
+        {{/if}}
+        {{#if navigationItem.leftBarButtonItems}}
+
+        {{#each navigationItem.leftBarButtonItems}}
+        let {{{case @key 'camel'}}}BarButtonItem = UIBarButtonItem(
+            {{#if image}}
+            image: UIImage(named: "{{{image}}}"),
+            style: .{{#if style}}{{{style}}}{{else}}plain{{/if}},
+            {{else}}
+            {{#if systemIcon}}
+            barButtonSystemItem: .{{{systemIcon}}},
+            {{else}}
+            title: "{{{title}}}",
+            style: .{{#if style}}{{{style}}}{{else}}plain{{/if}},
+            {{/if}}
+            {{/if}}
+            target: {{#if target}}{{{target}}}{{else}}self{{/if}},
+            action: #selector({{{action}}})
+        )
+        {{#typeof isEnabled 'boolean'}}
+        {{{case @key 'camel'}}}BarButtonItem.isEnabled = {{{isEnabled}}}
+        {{/typeof}}
+        {{#if tintColor}}
+        {{{case @key 'camel'}}}BarButtonItem.tintColor = .{{{tintColor}}}
+        {{/if}}
+        {{/each}}
+        self.navigationItem.leftBarButtonItems = [
+            {{#each navigationItem.leftBarButtonItems}}
+            {{{case @key 'camel'}}}BarButtonItem{{#unless @last}},{{/unless}}
+            {{/each}}
+        ]
+        {{/if}}
+        {{#if navigationItem.rightBarButtonItems}}
+
+        {{#each navigationItem.rightBarButtonItems}}
+        let {{{case @key 'camel'}}}BarButtonItem = UIBarButtonItem(
+            {{#if image}}
+            image: UIImage(named: "{{{image}}}"),
+            style: .{{#if style}}{{{style}}}{{else}}plain{{/if}},
+            {{else}}
+            {{#if systemIcon}}
+            barButtonSystemItem: .{{{systemIcon}}},
+            {{else}}
+            title: "{{{title}}}",
+            style: .{{#if style}}{{{style}}}{{else}}plain{{/if}},
+            {{/if}}
+            {{/if}}
+            target: {{#if target}}{{{target}}}{{else}}self{{/if}},
+            action: #selector({{{action}}})
+        )
+        {{#typeof isEnabled 'boolean'}}
+        {{{case @key 'camel'}}}BarButtonItem.isEnabled = {{{isEnabled}}}
+        {{/typeof}}
+        {{#if tintColor}}
+        {{{case @key 'camel'}}}BarButtonItem.tintColor = .{{{tintColor}}}
+        {{/if}}
+        {{/each}}
+        self.navigationItem.rightBarButtonItems = [
+            {{#each navigationItem.rightBarButtonItems}}
+            {{{case @key 'camel'}}}BarButtonItem{{#unless @last}},{{/unless}}
+            {{/each}}
+        ]
+        {{/if}}
+        {{#eq navigationItem.titleView.type 'searchBar'}}
+
+        {{#if navigationItem.titleView.searchBarStyle}}
+        searchBar.searchBarStyle = .{{{navigationItem.titleView.searchBarStyle}}}
+        {{/if}}
+        {{#if navigationItem.titleView.placeholder}}
+        searchBar.placeholder = "{{{navigationItem.titleView.placeholder}}}"
+        {{/if}}
+        {{#if navigationItem.titleView.sizeToFit}}
+        searchBar.sizeToFit()
+        {{/if}}
+        {{#ne navigationItem.titleView.isTranslucent undefined}}
+        searchBar.isTranslucent = {{{navigationItem.titleView.isTranslucent}}}
+        {{/ne}}
+        {{#ne navigationItem.titleView.enablesReturnKeyAutomatically undefined}}
+        searchBar.enablesReturnKeyAutomatically = {{{navigationItem.titleView.enablesReturnKeyAutomatically}}}
+        {{/ne}}
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        {{/eq}}
+        {{#if navigationBar}}
+
+        {{#if navigationBar.backgroundImage}}
+        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.setBackgroundImage(UIImage({{#if navigationBar.backgroundImage.imaged.named}}named: "{{{navigationBar.backgroundImage.imaged.named}}}"{{/if}}), for: .{{{navigationBar.backgroundImage.for}}})
+        {{/if}}
+        {{#typeof navigationBar.isHidden 'boolean'}}
+        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.isHidden = {{{navigationBar.isHidden}}}
+        {{/typeof}}
+        {{#typeof navigationBar.prefersLargeTitles 'boolean'}}
+        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.prefersLargeTitles = true
+        {{/typeof}}
+        {{#if navigationBar.shadowImage}}
+        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.shadowImage = UIImage({{#if navigationBar.shadowImage.named}}named: "{{{navigationBar.shadowImage.named}}}"{{/if}})
+        {{/if}}
+        {{#typeof navigationBar.isTranslucent 'boolean'}}
+        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.isTranslucent = true
+        {{/typeof}}
+        {{/if}}
+        {{#if tabBar}}
+
+        {{#if tabBar.barTintColor}}
+        self.tabBar.barTintColor = .{{{tabBar.barTintColor}}}
+        {{/if}}
+        {{#if tabBar.tintColor}}
+        self.tabBar.tintColor = .{{{tabBar.tintColor}}}
+        {{/if}}
+        {{/if}}
+        {{#if view}}
+
+        {{{indent (swiftValue 'self.view' view) 2 '    '}}}
+        {{/if}}
+        {{#if childViewControllers}}
+        {{#each childViewControllers}}
+
+        let {{#if name}}{{{case name 'camel'}}}{{else}}{{{case @key 'camel'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller = UI{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller({{#eq type 'pageView'}}transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil{{/eq}})
+        self.addChildViewController({{#if name}}{{{case name 'camel'}}}{{else}}{{{case @key 'camel'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller)
+        {{/each}}
+        {{/if}}
+        {{#if viewControllers}}
+        {{#each viewControllers}}
+
+        {{#if tabBarItem}}
+        {{#if name}}{{{case name 'camel'}}}{{else}}{{{case @key 'camel'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller.tabBarItem = UITabBarItem(
+            {{#if tabBarItem.systemItem}}
+            tabBarSystemItem: .{{{tabBarItem.systemItem}}},
+            {{else}}
+            title: "{{{tabBarItem.title}}}",
+            image: UIImage(named: "{{{tabBarItem.image}}}"),
+            {{/if}}
+            tag: {{{tabBarItem.tag}}}
+        )
+        {{#if tabBarItem.badgeValue}}
+        {{#if name}}{{{case name 'camel'}}}{{else}}{{{case @key 'camel'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller.tabBarItem.badgeValue = "{{{tabBarItem.badgeValue}}}"
+        {{/if}}
+        {{/if}}
+        {{/each}}
+
+        self.viewControllers = [
+          {{#each viewControllers}}
+          {{#if name}}{{{case name 'camel'}}}{{else}}{{{case @key 'camel'}}}{{/if}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller{{#unless @last}},{{/unless}}
+          {{/each}}
+        ]
+        {{/if}}
+        {{#each subviews}}
+        {{#eq type 'pageView'}}
+        {{{indent (swiftCreate @key this type (case type 'pascal') 'self.view' true) 2 '    '}}}
+        {{else}}
+        {{{indent (swiftCreate @key this type (case type 'pascal')) 2 '    '}}}
+        {{/eq}}
+        {{/each}}
+        {{#each subviews}}
+
+        {{#eq type 'pageView'}}
+        {{{indent (swiftValue @key this type (case type 'pascal') 'self.view' true) 2 '    '}}}
+        {{else}}
+        {{{indent (swiftValue @key this type (case type 'pascal') 'self.view') 2 '    '}}}
+        {{/eq}}
+        {{/each}}
+        {{#if dataSources}}
+        {{#each dataSources}}
+        {{#if objects}}
+
+        // UI{{{case @key 'pascal'}}}DataSource objects
+        {{#each objects}}
+        {{{this}}}.dataSource = self
+        {{/each}}
+        {{/if}}
+        {{/each}}
+        {{/if}}
+        {{#if delegates}}
+        {{#each delegates}}
+        {{#if objects}}
+
+        // UI{{{case @key 'pascal'}}}Delegate objects
+        {{#each objects}}
+        {{{this}}}.delegate = self
+        {{/each}}
+        {{/if}}
+        {{/each}}
+        {{/if}}
+        {{#if events.didLoad}}
+
+        {{{indent (code events.didLoad) 2 '    '}}}
+        {{/if}}
+    }
+    {{#if actions}}
+
+    // MARK: {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller actions
+    {{#each actions}}
+
+    @objc func {{{@key}}}(sender: NSObject!) {
+        {{{indent (code this) 2 '    '}}}
+    }
+    {{/each}}
+    {{/if}}
+    {{#each dataSources}}
+
+    // MARK: UI{{{case @key 'pascal'}}}DataSource events
+    {{#each events}}
+
+    {{#eq @../key 'collectionView'}}
+    {{#eq @key 'cell'}}
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    {{/eq}}
+    {{#eq @key 'numberOfItems'}}
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    {{/eq}}
+    {{#eq @key 'numberOfSections'}}
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'pageViewController'}}
+    {{#eq @key 'presentationCount'}}
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+    {{/eq}}
+    {{#eq @key 'presentationIndex'}}
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+    {{/eq}}
+    {{#eq @key 'viewControllerBefore'}}
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    {{/eq}}
+    {{#eq @key 'viewControllerAfter'}}
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    {{/eq}}
+    {{#eq @key 'viewControllerAtIndex'}}
+    func viewControllerAtIndex(_ index: Int) -> UIViewController? {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'pickerView'}}
+    {{#eq @key 'numberOfComponents'}}
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    {{/eq}}
+    {{#eq @key 'numberOfRows'}}
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'tableView'}}
+    {{#eq @key 'cell'}}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    {{/eq}}
+    {{#eq @key 'heightForHeader'}}
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    {{/eq}}
+    {{#eq @key 'numberOfRows'}}
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    {{/eq}}
+    {{#eq @key 'numberOfSections'}}
+    func numberOfSections(in tableView: UITableView) -> Int {
+    {{/eq}}
+    {{#eq @key 'sectionIndexTitles'}}
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    {{/eq}}
+    {{#eq @key 'titleForFooter'}}
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    {{/eq}}
+    {{#eq @key 'titleForHeader'}}
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    {{/eq}}
+    {{/eq}}
+        {{{indent (code this) 2 '    '}}}
+    }
+    {{/each}}
+    {{/each}}
+    {{#each delegates}}
+
+    // MARK: UI{{{case @key 'pascal'}}}Delegate events
+    {{#each events}}
+
+    {{#eq @../key 'collectionView'}}
+    {{#eq @key 'didSelectItem'}}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'pageViewController'}}
+    {{#eq @key 'didFinishAnimating'}}
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'pickerView'}}
+    {{#eq @key 'didSelectRow'}}
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    {{/eq}}
+    {{#eq @key 'heightForComponent'}}
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    {{/eq}}
+    {{#eq @key 'titleForRow'}}
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    {{/eq}}
+    {{#eq @key 'widthForComponent'}}
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'searchBar'}}
+    {{#eq @key 'cancelButtonClicked'}}
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    {{/eq}}
+    {{#eq @key 'searchButtonClicked'}}
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    {{/eq}}
+    {{#eq @key 'textDidBeginEditing'}}
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    {{/eq}}
+    {{#eq @key 'textDidEndEditing'}}
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    {{/eq}}
+    {{#eq @key 'textDidChange'}}
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    {{/eq}}
+    {{/eq}}
+    {{#eq @../key 'tableView'}}
+    {{#eq @key 'didSelectRow'}}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    {{/eq}}
+    {{/eq}}
+        {{{indent (code this) 2 '    '}}}
+    }
+    {{/each}}
+    {{/each}}
+
+}

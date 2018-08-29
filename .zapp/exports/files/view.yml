@@ -1,0 +1,24 @@
+engine: handlebars
+mapping:
+  appName: /app/name
+  name: '@key'
+  type: ./type
+  events: ./events
+  extensions: ./extensions
+  subviews: ./subviews
+  view: ./view
+  delegates: ./delegates
+  dataSources: ./dataSources
+  props: ./props
+  accessoryType: ./accessoryType
+filename:
+  engine: handlebars
+  template: >-
+    {{{case appName 'pascal'}}}/Views/{{{case name 'pascal'}}}{{{case type
+    'pascal'}}}.swift
+  mapping:
+    appName: /app/name
+    name: '@key'
+    type: ./type
+iterator: views
+template: view

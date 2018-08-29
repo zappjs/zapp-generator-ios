@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"{{#if launchScreen}}
+standalone="no"{{/if}}?>
+
+<document
+  type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB"
+  version="3.0"
+  toolsVersion="13122.16"
+  systemVersion="17A278a"
+  targetRuntime="iOS.CocoaTouch"
+  propertyAccessControl="none"
+  useAutolayout="YES"
+  {{#if launchScreen}}
+  launchScreen="{{{launchScreen}}}"
+  {{/if}}
+  {{#if useTraitCollections}}
+  useTraitCollections="{{{useTraitCollections}}}"
+  {{/if}}
+  useSafeAreas="YES"
+  colorMatched="YES"
+  {{#if initialViewController}}
+  initialViewController="{{{initialViewController}}}"
+  {{/if}}
+>
+  <dependencies>
+    <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12" />
+    <capability name="Safe area layout guides" minToolsVersion="9.0" />
+    <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+  </dependencies>
+  <scenes>
+    {{#each scenes}}
+    <scene sceneID="{{{@key}}}">
+      <objects>
+        <{{{type}}}
+          id="{{{@key}}}-{{{type}}}"
+          {{#if customClass}}
+          customClass="{{{customClass}}}"
+          customModuleProvider="{{{customModuleProvider}}}"
+          {{/if}}
+          sceneMemberID="viewController"
+        >
+          <{{#if type}}{{#eq type 'tabBarController'}}tabBar{{/eq}}{{#eq type 'tableViewController'}}tableView{{/eq}}{{#eq type 'viewController'}}view{{/eq}}{{else}}view{{/if}}
+            key="{{#eq type 'tabBarController'}}tabBar{{else}}view{{/eq}}"
+            id="{{{@key}}}-{{{type}}}-{{#eq type 'tabBarController'}}tabBar{{else}}view{{/eq}}"
+            opaque="{{#if view.opaque}}{{{view.opaque}}}{{else}}NO{{/if}}"
+            clipsSubviews="{{#if view.clipsSubviews}}{{{view.clipsSubviews}}}{{else}}YES{{/if}}"
+            {{#if view.userInteractionEnabled}}
+            userInteractionEnabled="{{{view.userInteractionEnabled}}}"
+            {{/if}}
+            contentMode="{{#if view.contentMode}}{{{view.contentMode}}}{{else}}scaleToFill{{/if}}"
+            {{#if view.preservesSuperviewLayoutMargins}}
+            preservesSuperviewLayoutMargins="{{{view.preservesSuperviewLayoutMargins}}}"
+            {{/if}}
+            {{#if view.selectionStyle}}
+            selectionStyle="{{{view.selectionStyle}}}"
+            {{/if}}
+            {{#if view.indentationWidth}}
+            indentationWidth="{{{view.indentationWidth}}}"
+            {{/if}}
+            {{#if view.alwaysBounceVertical}}
+            alwaysBounceVertical="{{{view.alwaysBounceVertical}}}"
+            {{/if}}
+            {{#if view.dataMode}}
+            dataMode="{{{view.dataMode}}}"
+            {{/if}}
+            {{#if view.style}}
+            style="{{{view.style}}}"
+            {{/if}}
+            {{#if view.separatorStyle}}
+            separatorStyle="{{{view.separatorStyle}}}"
+            {{/if}}
+            {{#if view.rowHeight}}
+            rowHeight="{{{view.rowHeight}}}"
+            {{/if}}
+            {{#if view.estimatedRowHeight}}
+            estimatedRowHeight="{{{view.estimatedRowHeight}}}"
+            {{/if}}
+            {{#if view.sectionHeaderHeight}}
+            sectionHeaderHeight="{{{view.sectionHeaderHeight}}}"
+            {{/if}}
+            {{#if view.sectionFooterHeight}}
+            sectionFooterHeight="{{{view.sectionFooterHeight}}}"
+            {{/if}}
+            {{#if view.text}}
+            text="{{{view.text}}}"
+            {{/if}}
+            {{#if view.textAlignment}}
+            textAlignment="{{{view.textAlignment}}}"
+            {{/if}}
+            {{#if view.lineBreakMode}}
+            lineBreakMode="{{{view.lineBreakMode}}}"
+            {{/if}}
+            {{#if view.minimumFontSize}}
+            minimumFontSize="{{{view.minimumFontSize}}}"
+            {{/if}}
+            {{#if view.adjustsFontSizeToFit}}
+            adjustsFontSizeToFit="{{{view.adjustsFontSizeToFit}}}"
+            {{/if}}
+            {{#if view.baselineAdjustment}}
+            baselineAdjustment="{{{view.baselineAdjustment}}}"
+            {{/if}}
+            {{#if view.verticalHuggingPriority}}
+            verticalHuggingPriority="{{{view.verticalHuggingPriority}}}"
+            {{/if}}
+            translatesAutoresizingMaskIntoConstraints="{{#if view.translatesAutoresizingMaskIntoConstraints}}{{{view.translatesAutoresizingMaskIntoConstraints}}}{{else}}NO{{/if}}"
+          >
+            {{#if view.backgroundColor}}
+            <color
+              key="backgroundColor"
+              {{#if view.backgroundColor.red}}
+              red="{{{view.backgroundColor.red}}}"
+              {{/if}}
+              {{#if view.backgroundColor.green}}
+              green="{{{view.backgroundColor.green}}}"
+              {{/if}}
+              {{#if view.backgroundColor.blue}}
+              blue="{{{view.backgroundColor.blue}}}"
+              {{/if}}
+              {{#if view.backgroundColor.alpha}}
+              alpha="{{{view.backgroundColor.alpha}}}"
+              {{/if}}
+              colorSpace="{{#if view.backgroundColor.colorSpace}}{{{view.backgroundColor.colorSpace}}}{{else}}custom{{/if}}"
+              customColorSpace="{{#if view.backgroundColor.customColorSpace}}{{{view.backgroundColor.customColorSpace}}}{{else}}sRGB{{/if}}"
+            >
+            </color>
+            {{/if}}
+            {{#if view.frame}}
+            <rect
+              key="frame"
+              x="{{#if view.frame.x}}{{{view.frame.x}}}{{else}}0.0{{/if}}"
+              y="{{#if view.frame.y}}{{{view.frame.y}}}{{else}}0.0{{/if}}"
+              {{#if view.frame.width}}
+              width="{{{view.frame.width}}}"
+              {{/if}}
+              {{#if view.frame.height}}
+              height="{{{view.frame.height}}}"
+              {{/if}}
+            />
+            {{/if}}
+            <autoresizingMask
+              key="autoresizingMask"
+              {{#if view.autoresizingMask.widthSizable}}
+              widthSizable="{{{view.autoresizingMask.widthSizable}}}"
+              {{/if}}
+              {{#if view.autoresizingMask.heightSizable}}
+              heightSizable="{{{view.autoresizingMask.heightSizable}}}"
+              {{/if}}
+              {{#if view.autoresizingMask.flexibleMinX}}
+              flexibleMinX="{{{view.autoresizingMask.flexibleMinX}}}"
+              {{/if}}
+              {{#if view.autoresizingMask.flexibleMinY}}
+              flexibleMinY="{{{view.autoresizingMask.flexibleMinY}}}"
+              {{/if}}
+              {{#if view.autoresizingMask.flexibleMaxX}}
+              flexibleMaxX="{{{view.autoresizingMask.flexibleMaxX}}}"
+              {{/if}}
+              {{#if view.autoresizingMask.flexibleMaxY}}
+              flexibleMaxY="{{{view.autoresizingMask.flexibleMaxY}}}"
+              {{/if}}
+            />
+            {{#if subviews}}
+            <subviews>
+              {{#each subviews}}
+              <{{#if type}}{{{type}}}{{else}}view{{/if}}
+                id="{{{@../key}}}-{{{../type}}}-subview-{{{@index}}}"
+                opaque="{{#if opaque}}{{{opaque}}}{{else}}NO{{/if}}"
+                clipsSubviews="{{#if clipsSubviews}}{{{clipsSubviews}}}{{else}}YES{{/if}}"
+                {{#if userInteractionEnabled}}
+                userInteractionEnabled="{{{userInteractionEnabled}}}"
+                {{/if}}
+                contentMode="{{#if contentMode}}{{{contentMode}}}{{else}}scaleToFill{{/if}}"
+                {{#if preservesSuperviewLayoutMargins}}
+                preservesSuperviewLayoutMargins="{{{preservesSuperviewLayoutMargins}}}"
+                {{/if}}
+                {{#if selectionStyle}}
+                selectionStyle="{{{selectionStyle}}}"
+                {{/if}}
+                {{#if indentationWidth}}
+                indentationWidth="{{{indentationWidth}}}"
+                {{/if}}
+                {{#if alwaysBounceVertical}}
+                alwaysBounceVertical="{{{alwaysBounceVertical}}}"
+                {{/if}}
+                {{#if dataMode}}
+                dataMode="{{{dataMode}}}"
+                {{/if}}
+                {{#if image}}
+                image="{{{image}}}"
+                {{/if}}
+                {{#if style}}
+                style="{{{style}}}"
+                {{/if}}
+                {{#if separatorStyle}}
+                separatorStyle="{{{separatorStyle}}}"
+                {{/if}}
+                {{#if rowHeight}}
+                rowHeight="{{{rowHeight}}}"
+                {{/if}}
+                {{#if estimatedRowHeight}}
+                estimatedRowHeight="{{{estimatedRowHeight}}}"
+                {{/if}}
+                {{#if sectionHeaderHeight}}
+                sectionHeaderHeight="{{{sectionHeaderHeight}}}"
+                {{/if}}
+                {{#if sectionFooterHeight}}
+                sectionFooterHeight="{{{sectionFooterHeight}}}"
+                {{/if}}
+                {{#if text}}
+                text="{{{text}}}"
+                {{/if}}
+                {{#if textAlignment}}
+                textAlignment="{{{textAlignment}}}"
+                {{/if}}
+                {{#if lineBreakMode}}
+                lineBreakMode="{{{lineBreakMode}}}"
+                {{/if}}
+                {{#if minimumFontSize}}
+                minimumFontSize="{{{minimumFontSize}}}"
+                {{/if}}
+                {{#if adjustsFontSizeToFit}}
+                adjustsFontSizeToFit="{{{adjustsFontSizeToFit}}}"
+                {{/if}}
+                {{#if baselineAdjustment}}
+                baselineAdjustment="{{{baselineAdjustment}}}"
+                {{/if}}
+                {{#if horizontalHuggingPriority}}
+                horizontalHuggingPriority="{{{horizontalHuggingPriority}}}"
+                {{/if}}
+                {{#if verticalHuggingPriority}}
+                verticalHuggingPriority="{{{verticalHuggingPriority}}}"
+                {{/if}}
+                translatesAutoresizingMaskIntoConstraints="{{#if translatesAutoresizingMaskIntoConstraints}}{{{translatesAutoresizingMaskIntoConstraints}}}{{else}}NO{{/if}}"
+              >
+                {{#if backgroundColor}}
+                <color
+                  key="backgroundColor"
+                  {{#if backgroundColor.red}}
+                  red="{{{backgroundColor.red}}}"
+                  {{/if}}
+                  {{#if backgroundColor.green}}
+                  green="{{{backgroundColor.green}}}"
+                  {{/if}}
+                  {{#if backgroundColor.blue}}
+                  blue="{{{backgroundColor.blue}}}"
+                  {{/if}}
+                  {{#if backgroundColor.alpha}}
+                  alpha="{{{backgroundColor.alpha}}}"
+                  {{/if}}
+                  colorSpace="{{#if backgroundColor.colorSpace}}{{{backgroundColor.colorSpace}}}{{else}}custom{{/if}}"
+                  customColorSpace="{{#if backgroundColor.customColorSpace}}{{{backgroundColor.customColorSpace}}}{{else}}sRGB{{/if}}"
+                >
+                </color>
+                {{/if}}
+                {{#if textColor}}
+                <color
+                  key="textColor"
+                  {{#if textColor.cocoaTouchSystemColor}}
+                  cocoaTouchSystemColor="{{{textColor.cocoaTouchSystemColor}}}"
+                  {{/if}}
+                  {{#if textColor.red}}
+                  red="{{{textColor.red}}}"
+                  {{/if}}
+                  {{#if textColor.green}}
+                  green="{{{textColor.green}}}"
+                  {{/if}}
+                  {{#if textColor.blue}}
+                  blue="{{{textColor.blue}}}"
+                  {{/if}}
+                  {{#if textColor.alpha}}
+                  alpha="{{{textColor.alpha}}}"
+                  {{/if}}
+                  colorSpace="{{#if textColor.colorSpace}}{{{textColor.colorSpace}}}{{else}}custom{{/if}}"
+                  customColorSpace="{{#if textColor.customColorSpace}}{{{textColor.customColorSpace}}}{{else}}sRGB{{/if}}"
+                >
+                </color>
+                {{else}}
+                <nil key="textColor" />
+                {{/if}}
+                {{#if fontDescription}}
+                <fontDescription
+                  key="fontDescription"
+                  {{#if fontDescription.type}}
+                  type="{{{fontDescription.type}}}"
+                  {{/if}}
+                  {{#if fontDescription.pointSize}}
+                  pointSize="{{{fontDescription.pointSize}}}"
+                  {{/if}}
+                >
+                </fontDescription>
+                {{/if}}
+                {{#if frame}}
+                <rect
+                  key="frame"
+                  x="{{#if frame.x}}{{{frame.x}}}{{else}}0.0{{/if}}"
+                  y="{{#if frame.y}}{{{frame.y}}}{{else}}0.0{{/if}}"
+                  {{#if frame.width}}
+                  width="{{{frame.width}}}"
+                  {{/if}}
+                  {{#if frame.height}}
+                  height="{{{frame.height}}}"
+                  {{/if}}
+                />
+                {{/if}}
+                {{#if constraints}}
+                <constraints>
+                  {{#each constraints}}
+                  {{#eqAny @key 'height' 'width'}}
+                  <constraint
+                    {{#if firstAttribute}}
+                    firstAttribute="{{{firstAttribute}}}"
+                    {{else}}
+                    firstAttribute="{{{@key}}}"
+                    {{/if}}
+                    {{#if constant}}
+                    constant="{{{this.constant}}}"
+                    {{/if}}
+                    {{#if symbolic}}
+                    symbolic="{{{symbolic}}}"
+                    {{/if}}
+                    id="{{{@../../key}}}-{{{@../key}}}-{{{@key}}}-constraint"
+                  />
+                  {{/eqAny}}
+                  {{/each}}
+                </constraints>
+                {{/if}}
+              </{{#if type}}{{{type}}}{{else}}view{{/if}}>
+              {{/each}}
+            </subviews>
+            {{/if}}
+            {{#if prototypes}}
+            <prototypes>
+              {{#each prototypes}}
+              <{{{type}}}
+                id="{{{@../key}}}-{{{type}}}-prototype-{{{@index}}}"
+                {{#if opaque}}
+                opaque="{{{opaque}}}"
+                {{/if}}
+                clipsSubviews="{{#if clipsSubviews}}{{{clipsSubviews}}}{{else}}YES{{/if}}"
+                {{#if userInteractionEnabled}}
+                userInteractionEnabled="{{{userInteractionEnabled}}}"
+                {{/if}}
+                contentMode="{{#if contentMode}}{{{contentMode}}}{{else}}scaleToFill{{/if}}"
+                {{#if preservesSuperviewLayoutMargins}}
+                preservesSuperviewLayoutMargins="{{{preservesSuperviewLayoutMargins}}}"
+                {{/if}}
+                {{#if selectionStyle}}
+                selectionStyle="{{{selectionStyle}}}"
+                {{/if}}
+                {{#if indentationWidth}}
+                indentationWidth="{{{indentationWidth}}}"
+                {{/if}}
+                {{#if alwaysBounceVertical}}
+                alwaysBounceVertical="{{{alwaysBounceVertical}}}"
+                {{/if}}
+                {{#if dataMode}}
+                dataMode="{{{dataMode}}}"
+                {{/if}}
+                {{#if style}}
+                style="{{{style}}}"
+                {{/if}}
+                {{#if separatorStyle}}
+                separatorStyle="{{{separatorStyle}}}"
+                {{/if}}
+                {{#if rowHeight}}
+                rowHeight="{{{rowHeight}}}"
+                {{/if}}
+                {{#if estimatedRowHeight}}
+                estimatedRowHeight="{{{estimatedRowHeight}}}"
+                {{/if}}
+                {{#if sectionHeaderHeight}}
+                sectionHeaderHeight="{{{sectionHeaderHeight}}}"
+                {{/if}}
+                {{#if sectionFooterHeight}}
+                sectionFooterHeight="{{{sectionFooterHeight}}}"
+                {{/if}}
+                {{#if text}}
+                text="{{{text}}}"
+                {{/if}}
+                {{#if textAlignment}}
+                textAlignment="{{{textAlignment}}}"
+                {{/if}}
+                {{#if lineBreakMode}}
+                lineBreakMode="{{{lineBreakMode}}}"
+                {{/if}}
+                {{#if minimumFontSize}}
+                minimumFontSize="{{{minimumFontSize}}}"
+                {{/if}}
+                {{#if adjustsFontSizeToFit}}
+                adjustsFontSizeToFit="{{{adjustsFontSizeToFit}}}"
+                {{/if}}
+                {{#if baselineAdjustment}}
+                baselineAdjustment="{{{baselineAdjustment}}}"
+                {{/if}}
+                {{#if verticalHuggingPriority}}
+                verticalHuggingPriority="{{{verticalHuggingPriority}}}"
+                {{/if}}
+                translatesAutoresizingMaskIntoConstraints="{{#if translatesAutoresizingMaskIntoConstraints}}{{{translatesAutoresizingMaskIntoConstraints}}}{{else}}NO{{/if}}"
+              >
+                {{#if frame}}
+                <rect
+                  key="frame"
+                  x="{{#if frame.x}}{{{frame.x}}}{{else}}0.0{{/if}}"
+                  y="{{#if frame.y}}{{{frame.y}}}{{else}}0.0{{/if}}"
+                  {{#if frame.width}}
+                  width="{{{frame.width}}}"
+                  {{/if}}
+                  {{#if frame.height}}
+                  height="{{{frame.height}}}"
+                  {{/if}}
+                />
+                {{/if}}
+                <autoresizingMask
+                  key="autoresizingMask"
+                  {{#if autoresizingMask.widthSizable}}
+                  widthSizable="{{{autoresizingMask.widthSizable}}}"
+                  {{/if}}
+                  {{#if autoresizingMask.heightSizable}}
+                  heightSizable="{{{autoresizingMask.heightSizable}}}"
+                  {{/if}}
+                  {{#if autoresizingMask.flexibleMinX}}
+                  flexibleMinX="{{{autoresizingMask.flexibleMinX}}}"
+                  {{/if}}
+                  {{#if autoresizingMask.flexibleMinY}}
+                  flexibleMinY="{{{autoresizingMask.flexibleMinY}}}"
+                  {{/if}}
+                  {{#if autoresizingMask.flexibleMaxX}}
+                  flexibleMaxX="{{{autoresizingMask.flexibleMaxX}}}"
+                  {{/if}}
+                  {{#if autoresizingMask.flexibleMaxY}}
+                  flexibleMaxY="{{{autoresizingMask.flexibleMaxY}}}"
+                  {{/if}}
+                />
+                {{#if contentView}}
+                <tableViewCellContentView
+                  key="contentView"
+                  id="{{{@../key}}}-{{{../type}}}-prototype-{{{@index}}}-contentView"
+                  opaque="{{#if contentView.opaque}}{{{contentView.opaque}}}{{else}}NO{{/if}}"
+                  clipsSubviews="{{#if contentView.clipsSubviews}}{{{contentView.clipsSubviews}}}{{else}}YES{{/if}}"
+                  {{#if contentView.multipleTouchEnabled}}
+                  multipleTouchEnabled="{{{contentView.multipleTouchEnabled}}}"
+                  {{/if}}
+                  {{#if contentView.userInteractionEnabled}}
+                  userInteractionEnabled="{{{contentView.userInteractionEnabled}}}"
+                  {{/if}}
+                  contentMode="{{#if contentView.contentMode}}{{{contentView.contentMode}}}{{else}}scaleToFill{{/if}}"
+                  {{#if contentView.preservesSuperviewLayoutMargins}}
+                  preservesSuperviewLayoutMargins="{{{contentView.preservesSuperviewLayoutMargins}}}"
+                  {{/if}}
+                  {{#if contentView.selectionStyle}}
+                  selectionStyle="{{{contentView.selectionStyle}}}"
+                  {{/if}}
+                  {{#if contentView.indentationWidth}}
+                  indentationWidth="{{{contentView.indentationWidth}}}"
+                  {{/if}}
+                  {{#if contentView.alwaysBounceVertical}}
+                  alwaysBounceVertical="{{{contentView.alwaysBounceVertical}}}"
+                  {{/if}}
+                  {{#if contentView.dataMode}}
+                  dataMode="{{{contentView.dataMode}}}"
+                  {{/if}}
+                  {{#if contentView.style}}
+                  style="{{{contentView.style}}}"
+                  {{/if}}
+                  {{#if contentView.separatorStyle}}
+                  separatorStyle="{{{contentView.separatorStyle}}}"
+                  {{/if}}
+                  {{#if contentView.rowHeight}}
+                  rowHeight="{{{contentView.rowHeight}}}"
+                  {{/if}}
+                  {{#if contentView.estimatedRowHeight}}
+                  estimatedRowHeight="{{{contentView.estimatedRowHeight}}}"
+                  {{/if}}
+                  {{#if contentView.sectionHeaderHeight}}
+                  sectionHeaderHeight="{{{contentView.sectionHeaderHeight}}}"
+                  {{/if}}
+                  {{#if contentView.sectionFooterHeight}}
+                  sectionFooterHeight="{{{contentView.sectionFooterHeight}}}"
+                  {{/if}}
+                  {{#if contentView.text}}
+                  text="{{{contentView.text}}}"
+                  {{/if}}
+                  {{#if contentView.textAlignment}}
+                  textAlignment="{{{contentView.textAlignment}}}"
+                  {{/if}}
+                  {{#if contentView.lineBreakMode}}
+                  lineBreakMode="{{{contentView.lineBreakMode}}}"
+                  {{/if}}
+                  {{#if contentView.minimumFontSize}}
+                  minimumFontSize="{{{contentView.minimumFontSize}}}"
+                  {{/if}}
+                  {{#if contentView.adjustsFontSizeToFit}}
+                  adjustsFontSizeToFit="{{{contentView.adjustsFontSizeToFit}}}"
+                  {{/if}}
+                  {{#if contentView.baselineAdjustment}}
+                  baselineAdjustment="{{{contentView.baselineAdjustment}}}"
+                  {{/if}}
+                  {{#if contentView.verticalHuggingPriority}}
+                  verticalHuggingPriority="{{{contentView.verticalHuggingPriority}}}"
+                  {{/if}}
+                  {{#if contentView.translatesAutoresizingMaskIntoConstraints}}
+                  translatesAutoresizingMaskIntoConstraints="{{{contentView.translatesAutoresizingMaskIntoConstraints}}}"
+                  {{/if}}
+                >
+                  {{#if contentView.frame}}
+                  <rect
+                    key="frame"
+                    x="{{#if contentView.frame.x}}{{{contentView.frame.x}}}{{else}}0.0{{/if}}"
+                    y="{{#if contentView.frame.y}}{{{contentView.frame.y}}}{{else}}0.0{{/if}}"
+                    {{#if contentView.frame.width}}
+                    width="{{{contentView.frame.width}}}"
+                    {{/if}}
+                    {{#if contentView.frame.height}}
+                    height="{{{contentView.frame.height}}}"
+                    {{/if}}
+                  />
+                  {{/if}}
+                  <autoresizingMask
+                    key="autoresizingMask"
+                    {{#if contentView.autoresizingMask.widthSizable}}
+                    widthSizable="{{{contentView.autoresizingMask.widthSizable}}}"
+                    {{/if}}
+                    {{#if contentView.autoresizingMask.heightSizable}}
+                    heightSizable="{{{contentView.autoresizingMask.heightSizable}}}"
+                    {{/if}}
+                    {{#if contentView.autoresizingMask.flexibleMinX}}
+                    flexibleMinX="{{{contentView.autoresizingMask.flexibleMinX}}}"
+                    {{/if}}
+                    {{#if contentView.autoresizingMask.flexibleMinY}}
+                    flexibleMinY="{{{contentView.autoresizingMask.flexibleMinY}}}"
+                    {{/if}}
+                    {{#if contentView.autoresizingMask.flexibleMaxX}}
+                    flexibleMaxX="{{{contentView.autoresizingMask.flexibleMaxX}}}"
+                    {{/if}}
+                    {{#if contentView.autoresizingMask.flexibleMaxY}}
+                    flexibleMaxY="{{{contentView.autoresizingMask.flexibleMaxY}}}"
+                    {{/if}}
+                  />
+                  {{#if contentView.subviews}}
+                  <subviews>
+                    {{#each contentView.subviews}}
+                    <{{{type}}}
+                      id="{{{@../key}}}-{{{../type}}}-subview-{{{@index}}}"
+                      opaque="{{#if opaque}}{{{opaque}}}{{else}}NO{{/if}}"
+                      clipsSubviews="{{#if clipsSubviews}}{{{clipsSubviews}}}{{else}}YES{{/if}}"
+                      {{#if userInteractionEnabled}}
+                      userInteractionEnabled="{{{userInteractionEnabled}}}"
+                      {{/if}}
+                      contentMode="{{#if contentMode}}{{{contentMode}}}{{else}}scaleToFill{{/if}}"
+                      {{#if preservesSuperviewLayoutMargins}}
+                      preservesSuperviewLayoutMargins="{{{preservesSuperviewLayoutMargins}}}"
+                      {{/if}}
+                      {{#if selectionStyle}}
+                      selectionStyle="{{{selectionStyle}}}"
+                      {{/if}}
+                      {{#if indentationWidth}}
+                      indentationWidth="{{{indentationWidth}}}"
+                      {{/if}}
+                      {{#if alwaysBounceVertical}}
+                      alwaysBounceVertical="{{{alwaysBounceVertical}}}"
+                      {{/if}}
+                      {{#if dataMode}}
+                      dataMode="{{{dataMode}}}"
+                      {{/if}}
+                      {{#if style}}
+                      style="{{{style}}}"
+                      {{/if}}
+                      {{#if separatorStyle}}
+                      separatorStyle="{{{separatorStyle}}}"
+                      {{/if}}
+                      {{#if rowHeight}}
+                      rowHeight="{{{rowHeight}}}"
+                      {{/if}}
+                      {{#if estimatedRowHeight}}
+                      estimatedRowHeight="{{{estimatedRowHeight}}}"
+                      {{/if}}
+                      {{#if sectionHeaderHeight}}
+                      sectionHeaderHeight="{{{sectionHeaderHeight}}}"
+                      {{/if}}
+                      {{#if sectionFooterHeight}}
+                      sectionFooterHeight="{{{sectionFooterHeight}}}"
+                      {{/if}}
+                      {{#if text}}
+                      text="{{{text}}}"
+                      {{/if}}
+                      {{#if textAlignment}}
+                      textAlignment="{{{textAlignment}}}"
+                      {{/if}}
+                      {{#if lineBreakMode}}
+                      lineBreakMode="{{{lineBreakMode}}}"
+                      {{/if}}
+                      {{#if minimumFontSize}}
+                      minimumFontSize="{{{minimumFontSize}}}"
+                      {{/if}}
+                      {{#if adjustsFontSizeToFit}}
+                      adjustsFontSizeToFit="{{{adjustsFontSizeToFit}}}"
+                      {{/if}}
+                      {{#if baselineAdjustment}}
+                      baselineAdjustment="{{{baselineAdjustment}}}"
+                      {{/if}}
+                      {{#if verticalHuggingPriority}}
+                      verticalHuggingPriority="{{{verticalHuggingPriority}}}"
+                      {{/if}}
+                      {{#if translatesAutoresizingMaskIntoConstraints}}
+                      translatesAutoresizingMaskIntoConstraints="{{{translatesAutoresizingMaskIntoConstraints}}}"
+                      {{/if}}
+                    >
+                      {{#if frame}}
+                      <rect
+                        key="frame"
+                        x="{{#if frame.x}}{{{frame.x}}}{{else}}0.0{{/if}}"
+                        y="{{#if frame.y}}{{{frame.y}}}{{else}}0.0{{/if}}"
+                        {{#if frame.width}}
+                        width="{{{frame.width}}}"
+                        {{/if}}
+                        {{#if frame.height}}
+                        height="{{{frame.height}}}"
+                        {{/if}}
+                      />
+                      {{/if}}
+                      <autoresizingMask
+                        key="autoresizingMask"
+                        {{#if autoresizingMask.widthSizable}}
+                        widthSizable="{{{autoresizingMask.widthSizable}}}"
+                        {{/if}}
+                        {{#if autoresizingMask.heightSizable}}
+                        heightSizable="{{{autoresizingMask.heightSizable}}}"
+                        {{/if}}
+                        {{#if autoresizingMask.flexibleMinX}}
+                        flexibleMinX="{{{autoresizingMask.flexibleMinX}}}"
+                        {{/if}}
+                        {{#if autoresizingMask.flexibleMinY}}
+                        flexibleMinY="{{{autoresizingMask.flexibleMinY}}}"
+                        {{/if}}
+                        {{#if autoresizingMask.flexibleMaxX}}
+                        flexibleMaxX="{{{autoresizingMask.flexibleMaxX}}}"
+                        {{/if}}
+                        {{#if autoresizingMask.flexibleMaxY}}
+                        flexibleMaxY="{{{autoresizingMask.flexibleMaxY}}}"
+                        {{/if}}
+                      />
+                      {{#if backgroundColor}}
+                      <color
+                        key="backgroundColor"
+                        {{#if backgroundColor.red}}
+                        red="{{{backgroundColor.red}}}"
+                        {{/if}}
+                        {{#if backgroundColor.green}}
+                        green="{{{backgroundColor.green}}}"
+                        {{/if}}
+                        {{#if backgroundColor.blue}}
+                        blue="{{{backgroundColor.blue}}}"
+                        {{/if}}
+                        {{#if backgroundColor.alpha}}
+                        alpha="{{{backgroundColor.alpha}}}"
+                        {{/if}}
+                        colorSpace="{{#if backgroundColor.colorSpace}}{{{backgroundColor.colorSpace}}}{{else}}custom{{/if}}"
+                        customColorSpace="{{#if backgroundColor.customColorSpace}}{{{backgroundColor.customColorSpace}}}{{else}}sRGB{{/if}}"
+                      >
+                      </color>
+                      {{/if}}
+                      {{#if textColor}}
+                      <color
+                        key="textColor"
+                        {{#if textColor.cocoaTouchSystemColor}}
+                        cocoaTouchSystemColor="{{{textColor.cocoaTouchSystemColor}}}"
+                        {{/if}}
+                        {{#if textColor.red}}
+                        red="{{{textColor.red}}}"
+                        {{/if}}
+                        {{#if textColor.green}}
+                        green="{{{textColor.green}}}"
+                        {{/if}}
+                        {{#if textColor.blue}}
+                        blue="{{{textColor.blue}}}"
+                        {{/if}}
+                        {{#if textColor.alpha}}
+                        alpha="{{{textColor.alpha}}}"
+                        {{/if}}
+                        colorSpace="{{#if textColor.colorSpace}}{{{textColor.colorSpace}}}{{else}}custom{{/if}}"
+                        customColorSpace="{{#if textColor.customColorSpace}}{{{textColor.customColorSpace}}}{{else}}sRGB{{/if}}"
+                      >
+                      </color>
+                      {{else}}
+                      <nil key="textColor" />
+                      {{/if}}
+                      {{#if fontDescription}}
+                      <fontDescription
+                        key="fontDescription"
+                        {{#if fontDescription.type}}
+                        type="{{{fontDescription.type}}}"
+                        {{/if}}
+                        {{#if fontDescription.pointSize}}
+                        pointSize="{{{fontDescription.pointSize}}}"
+                        {{/if}}
+                      >
+                      </fontDescription>
+                      {{/if}}
+                    </{{{type}}}>
+                    {{/each}}
+                  </subviews>
+                  {{/if}}
+                </tableViewCellContentView>
+                {{/if}}
+              </{{{type}}}>
+              {{/each}}
+            </prototypes>
+            {{/if}}
+            {{#if backgroundColor}}
+            <color
+              key="backgroundColor"
+              {{#if backgroundColor.red}}
+              red="{{{backgroundColor.red}}}"
+              {{/if}}
+              {{#if backgroundColor.green}}
+              green="{{{backgroundColor.green}}}"
+              {{/if}}
+              {{#if backgroundColor.blue}}
+              blue="{{{backgroundColor.blue}}}"
+              {{/if}}
+              {{#if backgroundColor.alpha}}
+              alpha="{{{backgroundColor.alpha}}}"
+              {{/if}}
+              colorSpace="{{#if backgroundColor.colorSpace}}{{{backgroundColor.colorSpace}}}{{else}}custom{{/if}}"
+              customColorSpace="{{#if backgroundColor.customColorSpace}}{{{backgroundColor.customColorSpace}}}{{else}}sRGB{{/if}}"
+            />
+            {{/if}}
+            {{#if subviews}}
+            <constraints>
+              {{#each subviews}}
+              {{#each constraints}}
+              {{#neAll @key 'height' 'width'}}
+              <constraint
+                {{#if firstItem}}
+                firstItem="{{{firstItem}}}"
+                {{else}}
+                firstItem="{{{@../../key}}}-viewController-subview-{{{@../index}}}"
+                {{/if}}
+                {{#if firstAttribute}}
+                firstAttribute="{{{firstAttribute}}}"
+                {{else}}
+                firstAttribute="{{{@key}}}"
+                {{/if}}
+                {{#if secondItem}}
+                secondItem="{{{secondItem}}}"
+                {{else}}
+                secondItem="{{{@../../key}}}-viewController-view"
+                {{/if}}
+                {{#if secondAttribute}}
+                secondAttribute="{{{secondAttribute}}}"
+                {{else}}
+                secondAttribute="{{{@key}}}"
+                {{/if}}
+                {{#if constant}}
+                constant="{{{this.constant}}}"
+                {{/if}}
+                {{#if symbolic}}
+                symbolic="{{{symbolic}}}"
+                {{/if}}
+                id="{{{@../../key}}}-{{{@../key}}}-{{{@key}}}-constraint"
+              />
+              {{/neAll}}
+              {{/each}}
+              {{/each}}
+            </constraints>
+            {{/if}}
+            {{#eq type 'viewController'}}
+            <viewLayoutGuide
+              key="safeArea"
+              id="{{{@key}}}-{{{type}}}-safeArea"
+            />
+            {{/eq}}
+          </{{#if type}}{{#eq type 'tabBarController'}}tabBar{{/eq}}{{#eq type 'tableViewController'}}tableView{{/eq}}{{#eq type 'viewController'}}view{{/eq}}{{else}}view{{/if}}>
+          {{#if connections}}
+          <connections>
+            {{#each connections}}
+            <segue
+              {{#if destination}}
+              destination="{{{destination}}}"
+              {{/if}}
+              {{#if kind}}
+              kind="{{{kind}}}"
+              {{/if}}
+              {{#if relationship}}
+              relationship="{{{relationship}}}"
+              {{/if}}
+              id="{{{@key}}}-connection-{{{@index}}}"
+            >
+            </segue>
+            {{/each}}
+          </connections>
+          {{/if}}
+          {{#if tabBarItem}}
+          <tabBarItem
+            id="{{{@key}}}-connection-tabBarItem"
+            key="tabBarItem"
+            {{#if tabBarItem.title}}
+            title="{{{tabBarItem.title}}}"
+            {{/if}}
+            {{#if tabBarItem.image}}
+            image="{{{tabBarItem.image}}}"
+            {{/if}}
+            {{#if tabBarItem.systemItem}}
+            systemItem="{{{tabBarItem.systemItem}}}"
+            {{/if}}
+          />
+          {{/if}}
+        </{{{type}}}>
+        <placeholder
+          placeholderIdentifier="IBFirstResponder"
+          id="{{{@key}}}-firstResponder"
+          userLabel="First Responder"
+          sceneMemberID="firstResponder"
+        />
+      </objects>
+      {{#if canvasLocation}}
+      <point
+        key="canvasLocation"
+        x="{{{canvasLocation.x}}}"
+        y="{{{canvasLocation.y}}}"
+      />
+      {{/if}}
+    </scene>
+    {{/each}}
+  </scenes>
+  {{#if resources}}
+  <resources>
+    {{#each resources}}
+    <{{{type}}}
+      name="{{{@key}}}"
+      {{#if width}}
+      width="{{{width}}}"
+      {{/if}}
+      {{#if height}}
+      height="{{{height}}}"
+      {{/if}}
+    />
+    {{/each}}
+  </resources>
+  {{/if}}
+</document>

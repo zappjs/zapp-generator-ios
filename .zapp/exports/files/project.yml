@@ -1,0 +1,15 @@
+engine: handlebars
+template: project
+filename:
+  engine: handlebars
+  template: '{{{case name ''pascal''}}}.xcodeproj/project.pbxproj'
+  mapping:
+    name: /app/name
+mapping:
+  controllers: /controllers
+  frameworks: /frameworks
+  models: /models
+  storyboards: /storyboards
+  views: /views
+  classes: /classes
+  appName: /app/name

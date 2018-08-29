@@ -1,0 +1,14 @@
+engine: json
+filename:
+  engine: handlebars
+  template: >-
+    {{{case appName
+    'pascal'}}}/Assets.xcassets/{{{name}}}.{{{type}}}set/Contents.json
+  mapping:
+    appName: /app/name
+    name: '@key'
+    type: ./type
+mapping:
+  images: ./images
+  info: /app/assetInfo
+iterator: assets

@@ -1,0 +1,318 @@
+type: object
+additionalProperties:
+  type: object
+  properties:
+    initialViewController:
+      type: string
+    launchScreen:
+      type: string
+    resources:
+      type: object
+    scenes:
+      type: object
+      additionalProperties:
+        type: object
+        properties:
+          autoresizingMask:
+            type: object
+            properties:
+              widthSizable:
+                type: string
+              heightSizable:
+                type: string
+          backgroundColor:
+            type: object
+            properties:
+              red:
+                type: string
+              green:
+                type: string
+              blue:
+                type: string
+              alpha:
+                type: string
+              colorSpace:
+                type: string
+                enum:
+                  - custom
+              customColorSpace:
+                type: string
+                enum:
+                  - sRGB
+          canvasLocation:
+            type: object
+            properties:
+              x:
+                type: string
+              'y':
+                type: string
+          constraints:
+            type: array
+            items:
+              type: object
+              properties:
+                firstAttribute:
+                  type: string
+                firstItem:
+                  type: string
+                secondAttribute:
+                  type: string
+                secondItem:
+                  type: string
+                constant:
+                  type: string
+                symbolic:
+                  type: string
+          customClass:
+            type: string
+          customModuleProvider:
+            type: string
+          frame:
+            type: object
+            properties:
+              x:
+                type: string
+              'y':
+                type: string
+              width:
+                type: string
+              height:
+                type: string
+          prototypes:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                contentView:
+                  type: object
+                  properties:
+                    frame: >-
+                      /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/frame
+                    subviews: >-
+                      /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/subviews
+                frame: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/frame
+                type:
+                  type: string
+          subviews:
+            type: object
+            additionalProperties:
+              type: object
+              properties:
+                alwaysBounceVertical: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/alwaysBounceVertical
+                backgroundColor: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/backgroundColor
+                clipsSubviews: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/clipsSubviews
+                contentMode: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/contentMode
+                dataMode: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/dataMode
+                estimatedRowHeight: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/estimatedRowHeight
+                fontDescription: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/fontDescription
+                lineBreakMode: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/lineBreakMode
+                minimumFontSize: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/minimumFontSize
+                multipleTouchEnabled: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/multipleTouchEnabled
+                opaque: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/opaque
+                rowHeight: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/rowHeight
+                sectionFooterHeight: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/sectionFooterHeight
+                sectionHeaderHeight: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/sectionHeaderHeight
+                separatorStyle: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/separatorStyle
+                style: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/style
+                text: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/text
+                textAlignment: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/textAlignment
+                textColor: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/textColor
+                translateAutoresizing: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/translateAutoresizing
+                type: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/type
+                userInteractionEnabled: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/userInteractionEnabled
+                preservesSuperviewLayoutMargins: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/preservesSuperviewLayoutMargins
+                selectionStyle: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/selectionStyle
+                indentationWidth: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/indentationWidth
+                frame: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/frame
+                autoresizingMask: >-
+                  /storyboards/additionalProperties/properties/scenes/additionalProperties/properties/view/properties/autoresizingMask
+                constraints: >-
+                  /controllers/properties/view/additionalProperties/properties/subviews/additionalProperties/properties/constraints
+          tabBarItem:
+            type: object
+            properties:
+              title:
+                type: string
+              image:
+                type: string
+              systemItem:
+                type: string
+                enum:
+                  - mostViewed
+                  - more
+                  - favorites
+                  - featured
+                  - topRated
+                  - recents
+                  - contacts
+                  - history
+                  - bookmarks
+                  - search
+                  - downloads
+                  - mostRecent
+          type:
+            type: string
+            enum:
+              - tabBarController
+              - viewController
+          view:
+            type: object
+            properties:
+              autoresizingMask:
+                type: object
+                properties:
+                  widthSizable:
+                    type: string
+                  heightSizable:
+                    type: string
+                  flexibleMinX:
+                    type: string
+                  flexibleMinY:
+                    type: string
+                  flexibleMaxX:
+                    type: string
+                  flexibleMaxY:
+                    type: string
+              alwaysBounceVertical:
+                type: string
+              backgroundColor:
+                type: object
+                properties:
+                  red:
+                    type: string
+                  green:
+                    type: string
+                  blue:
+                    type: string
+                  alpha:
+                    type: string
+                  colorSpace:
+                    type: string
+                    enum:
+                      - custom
+                  customColorSpace:
+                    type: string
+                    enum:
+                      - sRGB
+              clipsSubviews:
+                type: string
+              contentMode:
+                type: string
+              dataMode:
+                type: string
+              estimatedRowHeight:
+                type: string
+              fontDescription:
+                type: object
+              frame:
+                type: object
+                properties:
+                  x:
+                    type: string
+                  'y':
+                    type: string
+                  width:
+                    type: string
+                  height:
+                    type: string
+              lineBreakMode:
+                type: string
+              minimumFontSize:
+                type: string
+              multipleTouchEnabled:
+                type: string
+              opaque:
+                type: string
+              rowHeight:
+                type: string
+              sectionFooterHeight:
+                type: string
+              sectionHeaderHeight:
+                type: string
+              separatorStyle:
+                type: string
+              style:
+                type: string
+              text:
+                type: string
+              textAlignment:
+                type: string
+              textColor:
+                type: string
+              translateAutoresizing:
+                type: string
+              type:
+                type: string
+                enum:
+                  - label
+                  - button
+                  - segmentedControl
+                  - textField
+                  - slider
+                  - switch
+                  - activityIndicatorView
+                  - progressView
+                  - pageControl
+                  - stepper
+                  - stackView
+                  - tableView
+                  - tableViewCell
+                  - imageView
+                  - collectionView
+                  - textView
+                  - scrollView
+                  - datePicker
+                  - pickerView
+                  - visualEffectView
+                  - mapView
+                  - mtkView
+                  - glkView
+                  - sceneKitView
+                  - skView
+                  - arscnView
+                  - arskView
+                  - webView
+                  - wkWebView
+                  - view
+                  - containerView
+                  - navigationBar
+                  - toolbar
+                  - tabBar
+                  - searchBar
+              userInteractionEnabled:
+                type: string
+              preservesSuperviewLayoutMargins:
+                type: string
+              selectionStyle:
+                type: string
+              indentationWidth:
+                type: string
+    useTraitCollections:
+      type: string

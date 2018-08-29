@@ -1,0 +1,34 @@
+engine: handlebars
+mapping:
+  views: /views
+  appName: /app/name
+  type: navigation
+  events: ./events
+  extensions: ./extensions
+  subviews: ./subviews
+  view: ./view
+  name: '@key'
+  actions: ./actions
+  imports: ./imports
+  viewControllers: ./viewControllers
+  globalControllers: /controllers
+  title: ./title
+  navigationBar: ./navigationBar
+  navigationItem: ./navigationItem
+  gestureRecognizers: ./gestureRecognizers
+  props: ./props
+  delegates: ./delegates
+  dataSources: ./dataSources
+  childViewControllers: ./childViewControllers
+  tabBar: ./tabBar
+filename:
+  engine: handlebars
+  template: >-
+    {{{case appName 'pascal'}}}/Controllers/Navigation/{{{case name
+    'pascal'}}}NavigationController.swift
+  mapping:
+    appName: /app/name
+    name: '@key'
+    type: ./type
+iterator: /controllers/navigation
+template: controller

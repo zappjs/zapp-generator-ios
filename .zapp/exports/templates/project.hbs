@@ -1,0 +1,600 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		{{{hash 'appDelegate' 'PBXBuildFile'}}} /* AppDelegate.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash 'appDelegate' 'PBXFileReference'}}} /* AppDelegate.swift */;
+		};
+		{{#each classes}}
+		{{{hash (concat @key 'class' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'class' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.swift */;
+		};
+		{{/each}}
+		{{#each controllers.navigation}}
+		{{{hash (concat @key 'navigationController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}NavigationController.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'navigationController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}NavigationController.swift */;
+		};
+		{{/each}}
+		{{#each controllers.tabBar}}
+		{{{hash (concat @key 'tabBarController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}TabBarController.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'tabBarController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}TabBarController.swift */;
+		};
+		{{/each}}
+		{{#each controllers.view}}
+		{{{hash (concat @key 'viewController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}ViewController.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'viewController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}ViewController.swift */;
+		};
+		{{/each}}
+		{{#each frameworks}}
+		{{{hash (concat @key 'framework' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.framework in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'framework' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.framework */;
+		};
+		{{/each}}
+		{{#each models}}
+		{{{hash (concat @key 'model' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}Model.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'model' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}Model.swift */;
+		};
+		{{/each}}
+		{{#each storyboards}}
+		{{{hash (concat @key 'storyboard' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.storyboard in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'storyboard' 'PBXVariantGroup')}}} /* {{{case @key 'pascal'}}}.storyboard */;
+		};
+		{{/each}}
+		{{#each views}}
+		{{{hash (concat @key 'view' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}{{{case type 'pascal'}}}.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash (concat @key 'view' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}{{{case type 'pascal'}}}.swift */;
+		};
+		{{/each}}
+		A9E3E90620F514D400654035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9E3E90520F514D400654035 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9E3E8F920F514D400654035 /* {{{case appName 'pascal'}}}.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = {{{case appName 'pascal'}}}.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		{{{hash 'appDelegate' 'PBXFileReference'}}} /* AppDelegate.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = AppDelegate.swift;
+		  sourceTree = "<group>";
+		};
+		{{#each classes}}
+		{{{hash (concat @key 'class' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = {{{case @key 'pascal'}}}.swift;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		{{#each controllers.navigation}}
+		{{{hash (concat @key 'navigationController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}NavigationController.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = {{{case @key 'pascal'}}}NavigationController.swift;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		{{#each controllers.tabBar}}
+		{{{hash (concat @key 'tabBarController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}TabBarController.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = {{{case @key 'pascal'}}}TabBarController.swift;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		{{#each controllers.view}}
+		{{{hash (concat @key 'viewController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}ViewController.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = {{{case @key 'pascal'}}}ViewController.swift;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		{{#each frameworks}}
+		{{{hash (concat @key 'framework' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.framework */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = wrapper.framework;
+		  name = {{{case @key 'pascal'}}}.framework;
+		  path = Carthage/Build/iOS/{{{case @key 'pascal'}}}.framework;
+		  sourceTree = SOURCE_ROOT;
+		};
+		{{/each}}
+		{{#each models}}
+		{{{hash (concat @key 'model' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}Model.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = {{{case @key 'pascal'}}}Model.swift;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		{{#each storyboards}}
+		{{{hash (concat @key 'storyboard' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.storyboard */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.storyboard;
+		  name = Base;
+		  path = Base.lproj/{{{case @key 'pascal'}}}.storyboard;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		{{#each views}}
+		{{{hash (concat @key 'view' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}{{{case type 'pascal'}}}.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = {{{case @key 'pascal'}}}{{{case type 'pascal'}}}.swift;
+		  sourceTree = "<group>";
+		};
+		{{/each}}
+		A9E3E90520F514D400654035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9E3E90A20F514D400654035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9E3E8F620F514D400654035 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			  {{#each frameworks}}
+			  {{{hash (concat @key 'framework' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.framework */,
+			  {{/each}}
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		{{#if classes}}
+		{{{hash (concat 'class' 'PBXGroup')}}} /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each classes}}
+				{{{hash (concat @key 'class' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.swift */,
+				{{/each}}
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+    {{#if controllers}}
+		{{{hash (concat 'controller' 'PBXGroup')}}} /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each controllers}}
+				{{{hash (concat @key 'Controller' 'PBXGroup')}}} /* {{{case @key 'pascal'}}} Controllers */,
+				{{/each}}
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+    {{#if controllers.navigation}}
+		{{{hash (concat 'navigationController' 'PBXGroup')}}} /* Navigation Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each controllers.navigation}}
+				{{{hash (concat @key 'navigationController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}NavigationController.swift */,
+				{{/each}}
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+		{{#if controllers.tabBar}}
+		{{{hash (concat 'tabBarController' 'PBXGroup')}}} /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each controllers.tabBar}}
+				{{{hash (concat @key 'tabBarController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}TabBarController.swift */,
+				{{/each}}
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+		{{#if controllers.view}}
+		{{{hash (concat 'viewController' 'PBXGroup')}}} /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each controllers.view}}
+				{{{hash (concat @key 'viewController' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}ViewController.swift */,
+				{{/each}}
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+		{{#if frameworks}}
+		{{{hash (concat 'framework' 'PBXGroup')}}} /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each frameworks}}
+				{{{hash (concat @key 'framework' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}.framework */,
+				{{/each}}
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+		{{#if models}}
+		{{{hash (concat 'model' 'PBXGroup')}}} /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each models}}
+				{{{hash (concat @key 'model' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}Model.swift */,
+				{{/each}}
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+		{{#if views}}
+		{{{hash (concat 'view' 'PBXGroup')}}} /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#each views}}
+				{{{hash (concat @key 'view' 'PBXFileReference')}}} /* {{{case @key 'pascal'}}}{{{case type 'pascal'}}}.swift */,
+				{{/each}}
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		{{/if}}
+		A9E3E8F020F514D400654035 = {
+			isa = PBXGroup;
+			children = (
+				A9E3E8FB20F514D400654035 /* {{{case appName 'pascal'}}} */,
+				A9E3E8FA20F514D400654035 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9E3E8FA20F514D400654035 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9E3E8F920F514D400654035 /* {{{case appName 'pascal'}}}.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9E3E8FB20F514D400654035 /* {{{case appName 'pascal'}}} */ = {
+			isa = PBXGroup;
+			children = (
+			  {{#if classes}}
+			  {{{hash (concat 'class' 'PBXGroup')}}} /* Classes */,
+			  {{/if}}
+			  {{#if controllers}}
+			  {{{hash (concat 'controller' 'PBXGroup')}}} /* Controllers */,
+			  {{/if}}
+			  {{#if frameworks}}
+			  {{{hash (concat 'framework' 'PBXGroup')}}} /* Frameworks */,
+			  {{/if}}
+			  {{#if models}}
+			  {{{hash (concat 'model' 'PBXGroup')}}} /* Models */,
+			  {{/if}}
+			  {{#if views}}
+			  {{{hash (concat 'view' 'PBXGroup')}}} /* Views */,
+			  {{/if}}
+				{{{hash 'appDelegate' 'PBXFileReference'}}} /* AppDelegate.swift */,
+				{{#each storyboards}}
+				{{{hash (concat @key 'storyboard' 'PBXVariantGroup')}}} /* {{{case @key 'pascal'}}}.storyboard */,
+				{{/each}}
+				A9E3E90520F514D400654035 /* Assets.xcassets */,
+				A9E3E90A20F514D400654035 /* Info.plist */,
+			);
+			path = {{{case appName 'pascal'}}};
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9E3E8F820F514D400654035 /* {{{case appName 'pascal'}}} */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9E3E90D20F514D400654035 /* Build configuration list for PBXNativeTarget "{{{case appName 'pascal'}}}" */;
+			buildPhases = (
+				A9E3E8F520F514D400654035 /* Sources */,
+				A9E3E8F620F514D400654035 /* Frameworks */,
+				A9E3E8F720F514D400654035 /* Resources */,
+				{{{hash 'shellScript' 'PBXShellScriptBuildPhase'}}} /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = {{{case appName 'pascal'}}};
+			productName = {{{case appName 'pascal'}}};
+			productReference = A9E3E8F920F514D400654035 /* {{{case appName 'pascal'}}}.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		{{{hash 'root'}}} /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = ZappJS;
+				TargetAttributes = {
+					A9E3E8F820F514D400654035 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A9E3E8F420F514D400654035 /* Build configuration list for PBXProject "{{{case appName 'pascal'}}}" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9E3E8F020F514D400654035;
+			productRefGroup = A9E3E8FA20F514D400654035 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9E3E8F820F514D400654035 /* {{{case appName 'pascal'}}} */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9E3E8F720F514D400654035 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9E3E90620F514D400654035 /* Assets.xcassets in Resources */,
+				{{#each storyboards}}
+				{{{hash (concat @key 'storyboard' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.storyboard in Resources */,
+				{{/each}}
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		{{{hash 'shellScript' 'PBXShellScriptBuildPhase'}}} /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			  {{#each frameworks}}
+				"$(SRCROOT)/Carthage/Build/iOS/{{{case @key 'pascal'}}}.framework",
+				{{/each}}
+			);
+			outputPaths = (
+			  {{#each frameworks}}
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/{{{case @key 'pascal'}}}.framework",
+				{{/each}}
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9E3E8F520F514D400654035 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			  {{#each classes}}
+				{{{hash (concat @key 'class' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.swift in Sources */,
+			  {{/each}}
+			  {{#each controllers.navigation}}
+				{{{hash (concat @key 'navigationController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}NavigationController.swift in Sources */,
+			  {{/each}}
+			  {{#each controllers.tabBar}}
+				{{{hash (concat @key 'tabBarController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}TabBarController.swift in Sources */,
+			  {{/each}}
+			  {{#each controllers.view}}
+				{{{hash (concat @key 'viewController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}ViewController.swift in Sources */,
+			  {{/each}}
+			  {{#each models}}
+				{{{hash (concat @key 'model' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}Model.swift in Sources */,
+			  {{/each}}
+			  {{#each views}}
+				{{{hash (concat @key 'view' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}{{{case type 'pascal'}}}.swift in Sources */,
+			  {{/each}}
+				{{{hash 'appDelegate' 'PBXBuildFile'}}} /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+    {{#each storyboards}}
+		{{{hash (concat @key 'storyboard' 'PBXVariantGroup')}}} /* {{{case @key 'pascal'}}}.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				{{{hash (concat @key 'storyboard' 'PBXFileReference')}}} /* Base */,
+			);
+			name = {{{case @key 'pascal'}}}.storyboard;
+			sourceTree = "<group>";
+		};
+		{{/each}}
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9E3E90B20F514D400654035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A9E3E90C20F514D400654035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9E3E90E20F514D400654035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X5QKJKHAJ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = {{{case appName 'pascal'}}}/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zappjs.{{{case appName 'pascal'}}};
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A9E3E90F20F514D400654035 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X5QKJKHAJ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = {{{case appName 'pascal'}}}/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zappjs.{{{case appName 'pascal'}}};
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9E3E8F420F514D400654035 /* Build configuration list for PBXProject "{{{case appName 'pascal'}}}" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E3E90B20F514D400654035 /* Debug */,
+				A9E3E90C20F514D400654035 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9E3E90D20F514D400654035 /* Build configuration list for PBXNativeTarget "{{{case appName 'pascal'}}}" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E3E90E20F514D400654035 /* Debug */,
+				A9E3E90F20F514D400654035 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = {{{hash 'root'}}} /* Project object */;
+}

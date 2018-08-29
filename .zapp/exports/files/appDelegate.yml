@@ -1,0 +1,12 @@
+engine: handlebars
+filename:
+  engine: handlebars
+  template: '{{{case name ''pascal''}}}/AppDelegate.swift'
+  mapping:
+    name: /app/name
+template: appDelegate
+mapping:
+  window: /app/delegate/window
+  controllers: /controllers
+  shared: /app/shared
+  appearance: /app/appearance

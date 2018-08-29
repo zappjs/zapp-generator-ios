@@ -1,0 +1,22 @@
+//
+//  {{{case name 'pascal'}}}ViewController.swift
+//  {{{case appName 'pascal'}}}
+//
+{{#if author}}
+//  Created by {{{author.name}}}.
+{{/if}}
+{{#if copyright}}
+//  {{{copyright}}}
+//
+{{/if}}
+
+{{#each imports}}
+import {{{this}}}
+{{/each}}
+import UIKit
+
+struct {{{case name 'pascal'}}}Model {
+    {{#each attributes}}
+    let {{{@key}}}: {{#eq type 'array'}}[{{{case items.type 'pascal'}}}]{{else}}{{{case type 'pascal'}}}{{/eq}}
+    {{/each}}
+}

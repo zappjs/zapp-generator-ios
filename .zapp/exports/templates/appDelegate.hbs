@@ -1,0 +1,53 @@
+//
+//  AppDelegate.swift
+{{#if appName}}
+//  {{{case appName 'pascal'}}}
+{{/if}}
+//
+{{#any author copyright}}
+{{#if author}}
+//  Created by {{{author.name}}}.
+{{/if}}
+{{#if copyright}}
+//  Copyright © {{{copyright}}}. All rights reserved.
+{{/if}}
+//
+{{/any}}
+
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        {{#if appearance}}
+
+        {{#each appearance}}
+        {{{indent (swiftValue (concat 'UI' (case @key 'pascal') '.appearance()') this) 2 '    '}}}
+        {{/each}}
+        {{/if}}
+        {{#if shared}}
+
+        {{#each shared}}
+        UIApplication.shared.{{{@key}}} = .{{{this}}}
+        {{/each}}
+        {{/if}}
+
+        // create app window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        {{#if window.rootViewController}}
+
+        // set root view controller
+        let rootViewController = {{{case window.rootViewController.name 'pascal'}}}{{#if window.rootViewController.type}}{{{case window.rootViewController.type 'pascal'}}}{{else}}View{{/if}}Controller()
+        window?.rootViewController = rootViewController
+        {{/if}}
+
+        // show window
+        window?.makeKeyAndVisible()
+
+        return true
+    }
+
+}
