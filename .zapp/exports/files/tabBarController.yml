@@ -9,6 +9,7 @@ mapping:
   view: ./view
   name: '@key'
   actions: ./actions
+  observers: ./observers
   imports: ./imports
   viewControllers: ./viewControllers
   globalControllers: /controllers

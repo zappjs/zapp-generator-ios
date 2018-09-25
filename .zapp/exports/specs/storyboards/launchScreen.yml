@@ -1,0 +1,20 @@
+launchScreen: YES
+useTraitCollections: YES
+scenes:
+  launch:
+    type: viewController
+    view:
+      autoresizingMask:
+        widthSizable: YES
+        heightSizable: YES
+      backgroundColor:
+        red: 1
+        blue: 1
+        green: 1
+        alpha: 1
+      contentMode: scaleToFill
+      frame:
+        x: 0
+        y: 0
+        width: 375
+        height: 667

@@ -85,20 +85,6 @@ class {{{case name 'pascal'}}}{{{case type 'pascal'}}}: UI{{{case type 'pascal'}
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        {{#if subviews}}
-
-        {{#each subviews}}
-        {{#eq type 'pageView'}}
-        {{{case @key 'camel'}}}{{{case type 'pascal'}}}Controller = UI{{{case type 'pascal'}}}Controller()
-        {{else}}
-        {{{case @key 'camel'}}}{{{case type 'pascal'}}} = UI{{{case type 'pascal'}}}()
-        {{/eq}}
-        {{/each}}
-        {{/if}}
-    }
     {{#each dataSources}}
 
     // MARK: UI{{{case @key 'pascal'}}}DataSource events

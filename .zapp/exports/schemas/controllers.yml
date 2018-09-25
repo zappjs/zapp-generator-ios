@@ -35,6 +35,20 @@ properties:
         dataSources:
           type: object
           properties:
+            collectionView:
+              type: object
+              properties:
+                events:
+                  type: object
+                  properties:
+                    cell:
+                      type: code
+                    numberOfItems:
+                      type: code
+                    numberOfSections:
+                      type: code
+                objects: >-
+                  /controllers/properties/view/additionalProperties/properties/dataSources/properties/tableView/properties/objects
             tableView:
               type: object
               properties:
@@ -60,6 +74,16 @@ properties:
         delegates:
           type: object
           properties:
+            collectionView:
+              type: object
+              properties:
+                events:
+                  type: object
+                  properties:
+                    didSelectItem:
+                      type: code
+                objects: >-
+                  /controllers/properties/view/additionalProperties/properties/dataSources/properties/tableView/properties/objects
             tableView:
               type: object
               properties:
@@ -95,6 +119,10 @@ properties:
               type: code
             willDisappear:
               type: code
+        observers:
+          type: object
+          additionalProperties:
+            type: code
         gestureRecognizers:
           type: object
           additionalProperties:
@@ -175,7 +203,7 @@ properties:
                   title:
                     type: string
                   style:
-                    type: object
+                    type: string
                     enum:
                       - done
                       - plain
@@ -189,6 +217,17 @@ properties:
               type: object
               additionalProperties: >-
                 /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties
+            backBarButtonItem:
+              type: object
+              properties:
+                systemIcon: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/systemIcon
+                target: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/target
+                action: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/action
+                title: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/title
+                style: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/style
+                tintColor: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/tintColor
+                image: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/image
+                isEnabled: /controllers/properties/view/additionalProperties/properties/navigationItem/properties/leftBarButtonItems/additionalProperties/properties/isEnabled
             titleView:
               type: object
               properties:
@@ -263,6 +302,24 @@ properties:
                   - roundedRect
               cellsPerRow:
                 type: number
+              collectionView:
+                type: object
+                properties:
+                  layout:
+                    type: object
+                    properties:
+                      scrollDirection:
+                        type: string
+                        enum:
+                          - horizontal
+                          - vertical
+                      itemSize:
+                        type: object
+                        properties:
+                          width:
+                            type: number
+                          height:
+                            type: number
               constraints:
                 type: object
                 properties:

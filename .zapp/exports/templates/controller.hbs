@@ -82,6 +82,31 @@ class {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{
 
         self.navigationItem.prompt = "{{{navigationItem.prompt}}}"
         {{/if}}
+        {{#if navigationItem.backBarButtonItem}}
+
+        let backBarButtonItem = UIBarButtonItem(
+            {{#if navigationItem.backBarButtonItem.image}}
+            image: UIImage(named: "{{{navigationItem.backBarButtonItem.image}}}"),
+            style: .{{#if navigationItem.backBarButtonItem.style}}{{{navigationItem.backBarButtonItem.style}}}{{else}}plain{{/if}},
+            {{else}}
+            {{#if navigationItem.backBarButtonItem.systemIcon}}
+            barButtonSystemItem: .{{{navigationItem.backBarButtonItem.systemIcon}}},
+            {{else}}
+            title: "{{{navigationItem.backBarButtonItem.title}}}",
+            style: .{{#if navigationItem.backBarButtonItem.style}}{{{navigationItem.backBarButtonItem.style}}}{{else}}plain{{/if}},
+            {{/if}}
+            {{/if}}
+            target: {{#if navigationItem.backBarButtonItem.target}}{{{navigationItem.backBarButtonItem.target}}}{{else}}self{{/if}},
+            action: {{#if navigationItem.backBarButtonItem.action}}#selector({{{navigationItem.backBarButtonItem.action}}}){{else}}nil{{/if}}
+        )
+        {{#typeof isEnabled 'boolean'}}
+        backBarButtonItem.isEnabled = {{{isEnabled}}}
+        {{/typeof}}
+        {{#if tintColor}}
+        backBarButtonItem.tintColor = .{{{tintColor}}}
+        {{/if}}
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+        {{/if}}
         {{#if navigationItem.leftBarButtonItems}}
 
         {{#each navigationItem.leftBarButtonItems}}
@@ -173,7 +198,7 @@ class {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{
         self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.isHidden = {{{navigationBar.isHidden}}}
         {{/typeof}}
         {{#typeof navigationBar.prefersLargeTitles 'boolean'}}
-        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.prefersLargeTitles = true
+        self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.prefersLargeTitles = {{{navigationBar.prefersLargeTitles}}}
         {{/typeof}}
         {{#if navigationBar.shadowImage}}
         self.{{#ne type 'navigation'}}navigationController?.{{/ne}}navigationBar.shadowImage = UIImage({{#if navigationBar.shadowImage.named}}named: "{{{navigationBar.shadowImage.named}}}"{{/if}})
@@ -276,6 +301,18 @@ class {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{
 
     @objc func {{{@key}}}(sender: NSObject!) {
         {{{indent (code this) 2 '    '}}}
+    }
+    {{/each}}
+    {{/if}}
+    {{#if observers}}
+
+    // MARK: {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{/if}}Controller observers
+    {{#each observers}}
+
+    @objc func {{{@key}}}(_ notification: NSNotification) {
+        if let userInfo = notification.userInfo as NSDictionary? {
+            {{{indent (code this) 3 '    '}}}
+        }
     }
     {{/each}}
     {{/if}}

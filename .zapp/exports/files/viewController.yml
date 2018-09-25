@@ -9,6 +9,7 @@ mapping:
   view: ./view
   appName: /app/name
   actions: ./actions
+  observers: ./observers
   imports: ./imports
   viewControllers: ./viewControllers
   globalControllers: /controllers
