@@ -11,6 +11,10 @@
 		  isa = PBXBuildFile;
 		  fileRef = {{{hash 'appDelegate' 'PBXFileReference'}}} /* AppDelegate.swift */;
 		};
+		{{{hash 'colors' 'PBXBuildFile'}}} /* UIColorExtension.swift in Sources */ = {
+		  isa = PBXBuildFile;
+		  fileRef = {{{hash 'colors' 'PBXFileReference'}}} /* UIColorExtension.swift */;
+		};
 		{{#each classes}}
 		{{{hash (concat @key 'class' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}.swift in Sources */ = {
 		  isa = PBXBuildFile;
@@ -68,6 +72,12 @@
 		  isa = PBXFileReference;
 		  lastKnownFileType = sourcecode.swift;
 		  path = AppDelegate.swift;
+		  sourceTree = "<group>";
+		};
+		{{{hash 'colors' 'PBXFileReference'}}} /* UIColorExtension.swift */ = {
+		  isa = PBXFileReference;
+		  lastKnownFileType = sourcecode.swift;
+		  path = UIColorExtension.swift;
 		  sourceTree = "<group>";
 		};
 		{{#each classes}}
@@ -154,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		{{{hash (concat 'extensions' 'PBXGroup')}}} /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				{{{hash 'colors' 'PBXFileReference'}}} /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		{{#if classes}}
 		{{{hash (concat 'class' 'PBXGroup')}}} /* Classes */ = {
 			isa = PBXGroup;
@@ -275,6 +293,7 @@
 			  {{#if controllers}}
 			  {{{hash (concat 'controller' 'PBXGroup')}}} /* Controllers */,
 			  {{/if}}
+			  {{{hash (concat 'extensions' 'PBXGroup')}}} /* Extensions */,
 			  {{#if frameworks}}
 			  {{{hash (concat 'framework' 'PBXGroup')}}} /* Frameworks */,
 			  {{/if}}
@@ -402,6 +421,7 @@
 			  {{#each controllers.view}}
 				{{{hash (concat @key 'viewController' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}ViewController.swift in Sources */,
 			  {{/each}}
+				{{{hash 'colors' 'PBXBuildFile'}}} /* UIColorExtension.swift in Sources */,
 			  {{#each models}}
 				{{{hash (concat @key 'model' 'PBXBuildFile')}}} /* {{{case @key 'pascal'}}}Model.swift in Sources */,
 			  {{/each}}
@@ -540,17 +560,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X5QKJKHAJ2;
+				DEVELOPMENT_TEAM = {{{developmentTeam}}};
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = {{{case appName 'pascal'}}}/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zappjs.{{{case appName 'pascal'}}};
+				PRODUCT_BUNDLE_IDENTIFIER = "{{{appDomain}}}.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = {{#eq devices 'iphone'}}1{{/eq}}{{#eq devices 'ipad'}}2{{/eq}}{{#eq devices 'universal'}}"1,2"{{/eq}};
 			};
 			name = Debug;
 		};
@@ -559,17 +579,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X5QKJKHAJ2;
+				DEVELOPMENT_TEAM = {{{developmentTeam}}};
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = {{{case appName 'pascal'}}}/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zappjs.{{{case appName 'pascal'}}};
+				PRODUCT_BUNDLE_IDENTIFIER = "{{{appDomain}}}.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = {{#eq devices 'iphone'}}1{{/eq}}{{#eq devices 'ipad'}}2{{/eq}}{{#eq devices 'universal'}}"1,2"{{/eq}};
 			};
 			name = Release;
 		};

@@ -1,0 +1,9 @@
+filename:
+  engine: handlebars
+  template: '{{{case name ''pascal''}}}/Extensions/UIColorExtension.swift'
+  mapping:
+    name: /app/name
+engine: handlebars
+template: colors
+mapping:
+  colors: /colors

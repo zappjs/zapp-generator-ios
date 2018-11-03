@@ -13,6 +13,20 @@ properties:
                 type: string
               type:
                 type: string
+  development:
+    type: object
+    properties:
+      team:
+        type: string
+  devices:
+    enum:
+      - ipad
+      - iphone
+      - universal
+    type: string
+  domain:
+    example: org.example
+    type: string
   info:
     type: object
     properties:

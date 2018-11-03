@@ -13,3 +13,6 @@ mapping:
   views: /views
   classes: /classes
   appName: /app/name
+  appDomain: /app/domain
+  developmentTeam: /app/development/team
+  devices: /app/devices

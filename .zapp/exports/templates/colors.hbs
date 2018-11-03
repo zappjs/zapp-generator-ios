@@ -1,0 +1,12 @@
+import UIKit
+
+extension UIColor {
+    {{#each colors}}
+    static let {{{case @key 'camel'}}} = UIColor(
+        red: {{#if red}}{{{red}}}{{else}}0{{/if}}/255,
+        green: {{#if green}}{{{green}}}{{else}}0{{/if}}/255,
+        blue: {{#if blue}}{{{blue}}}{{else}}0{{/if}}/255,
+        alpha: {{#if alpha}}{{{alpha}}}{{else}}1{{/if}}
+    )
+    {{/each}}
+}

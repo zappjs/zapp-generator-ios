@@ -1,0 +1,12 @@
+type: object
+additionalProperties:
+  type: object
+  properties:
+    red:
+      type: number
+    green:
+      type: number
+    blue:
+      type: number
+    alpha:
+      type: number
