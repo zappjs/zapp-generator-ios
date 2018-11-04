@@ -50,6 +50,14 @@ class {{{case name 'pascal'}}}{{#if type}}{{{case type 'pascal'}}}{{else}}View{{
         {{{indent (code events.willAppear) 2 '    '}}}
     }
     {{/if}}
+    {{#if events.didAppear}}
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        {{{indent (code events.didAppear) 2 '    '}}}
+    }
+    {{/if}}
     {{#if events.willDisappear}}
 
     override func viewWillDisappear(_ animated: Bool) {

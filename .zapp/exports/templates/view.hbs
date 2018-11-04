@@ -54,6 +54,10 @@ class {{{case name 'pascal'}}}{{{case type 'pascal'}}}: UI{{{case type 'pascal'}
 
         self.accessoryType = .{{{accessoryType}}}
         {{/if}}
+        {{#if selectionStyle}}
+
+        self.selectionStyle = .{{{selectionStyle}}}
+        {{/if}}
         {{#if dataSources}}
         {{#each dataSources}}
         {{#if objects}}

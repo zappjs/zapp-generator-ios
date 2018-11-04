@@ -255,6 +255,13 @@ properties:
                 - never
             prompt:
               type: string
+        selectionStyle:
+          type: string
+          enum:
+            - blue
+            - default
+            - gray
+            - none
         subviews:
           type: object
           additionalProperties:
